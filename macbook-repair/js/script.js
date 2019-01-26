@@ -1,53 +1,45 @@
 
+//burger-menu
+var menuIcon = document.querySelector('#menuIcon');
+var bigHeader = document.querySelector('.big-header')
 
-//hamburher
-const mobileIcon = document.querySelector('#mobile-icon') //find-icon
-const menuItems = document.querySelector('.menu-items') //find list of links
 
+if(menuIcon) {
 
-if (mobileIcon) {
-mobileIcon.addEventListener('click', clicked);
-}
-
-function clicked () {
- 
-  mobileIcon.classList.toggle('rotate-lines') //add style class to animate icon by click
-  menuItems.classList.toggle('show-menu') //add style class to animate icon by click
+menuIcon.addEventListener('click', clicked);
 
 }
 
-
-
-
-
-
-
-
-
-
+function clicked (){
  
-    //represantation of price without php with the help of drop down table
-    (function() {
-      function _appendBefore(after, el) {
-        after.parentNode.insertBefore(el, after);
-      }
-      function _appendAfter(after, el) {
-        after.parentNode.insertBefore(el, after.nextSibling);
-      }
+  menuIcon.classList.toggle('change');
+  bigHeader.classList.toggle('slide')
+
+}
+
+
+ //represantation of price without php with the help of drop down table
+  (function() {
+  function _appendBefore(after, el) {
+  after.parentNode.insertBefore(el, after);
+  }
+  function _appendAfter(after, el) {
+  after.parentNode.insertBefore(el, after.nextSibling);
+  }
     
-      function _react() {
-        var s1 = this["data-select-1"].value;
-        var s2 = this["data-select-2"].value;
-        var target = this["data-target"];
+  function _react() {
+    var s1 = this["data-select-1"].value;
+    var s2 = this["data-select-2"].value;
+    var target = this["data-target"];
     
-        if (parseInt(s1) && parseInt(s2)) {
-          target.textContent = this.table.rows[s2].cells[s1].textContent
-          this.table.rows[s2].cells[s1].classList.add('color')
-        } else {
-          target.textContent = ""  
-        } 
+    if (parseInt(s1) && parseInt(s2)) {
+      target.textContent = this.table.rows[s2].cells[s1].textContent
+      this.table.rows[s2].cells[s1].classList.add('color')
+    } else {
+      target.textContent = ""  
+    } 
         
-      }
+  }
     
       function convert(selector) {
         var i,
@@ -118,38 +110,25 @@ function clicked () {
     UItableConvert(".substitute-with-dropdowns");
 
     
-
-   /* function wrap(el, wrapper) {
-      el.parentNode.insertBefore(wrapper, el);
-      wrapper.appendChild(el);
-      wrapper.classList.add("wrapper")
-  }
-  
-  // example: wrapping an anchor with class "wrap_me" into a new div element
-  wrap(document.querySelector('select'), document.createElement('div'));*/
-
-
-
-  /*jslint browser*/
-/*global window*/
+/*modal*/
 (function iife() {
-  "use strict";
-  function closestEl(el, selector) {
-      var doc = el.document || el.ownerDocument;
-      var matches = doc.querySelectorAll(selector);
-      var i;
-      while (el) {
-          i = matches.length - 1;
-          while (i >= 0) {
-              if (matches.item(i) === el) {
-                  return el;
-              }
-              i -= 1;
-          }
-          el = el.parentElement;
-      }
+"use strict";
+function closestEl(el, selector) {
+  var doc = el.document || el.ownerDocument;
+  var matches = doc.querySelectorAll(selector);
+  var i;
+  while (el) {
+      i = matches.length - 1;
+      while (i >= 0) {
+      if (matches.item(i) === el) {
       return el;
   }
+      i -= 1;
+  }
+      el = el.parentElement;
+  }
+      return el;
+}
   var modalBtns = document.querySelectorAll(".form-button");
   modalBtns.forEach(function addBtnClickEvent(btn) {
       btn.onclick = function showModal() {
