@@ -67,7 +67,7 @@ body {font-family: 'SF UI Display'; font-style: normal;}
 a {text-decoration: none; font-style: normal;}
 .content-wrapper {padding: 0 10px;}
 button {cursor: pointer; background-color: transparent; line-height: 0;}
-
+.phone-number a {text-decoration: none; color: #fff;}
 
 /*mobile-first*/
 
